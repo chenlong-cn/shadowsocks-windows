@@ -30,9 +30,9 @@ namespace Shadowsocks
         public static CommandLineOption Options { get; private set; }
         public static string[] Args { get; private set; }
 
-        // https://github.com/dotnet/runtime/issues/13051#issuecomment-510267727
-        public static readonly string ExecutablePath = Process.GetCurrentProcess().MainModule?.FileName;
-        public static readonly string WorkingDirectory = Path.GetDirectoryName(ExecutablePath);
+        //// https://github.com/dotnet/runtime/issues/13051#issuecomment-510267727
+        //public static readonly string ExecutablePath = Process.GetCurrentProcess().MainModule?.FileName;
+        //public static readonly string WorkingDirectory = Path.GetDirectoryName(ExecutablePath);
 
         private static readonly Mutex mutex = new Mutex(true, $"Shadowsocks_{ExecutablePath.GetHashCode()}");
 
