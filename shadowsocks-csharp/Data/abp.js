@@ -12,13 +12,17 @@ var rules = [];
 // convert to abp grammar
 for (var i = 0; i < __RULES__.length; i++) {
     var s = __RULES__[i];
-    if (s.substring(0, 2) == "||") s += "^";
+    if (s.substring(0, 2) == "||" ||
+        s.substring(0, 4) == "@@||"
+       ) s += "^";
     rules.push(s);
 }
 
 for (var i = 0; i < __USERRULES__.length; i++) {
     var s = __USERRULES__[i];
-    if (s.substring(0, 2) == "||") s += "^";
+    if (s.substring(0, 2) == "||" ||
+        s.substring(0, 4) == "@@||"
+       )  s += "^";
     userrules.push(s);
 }
 
